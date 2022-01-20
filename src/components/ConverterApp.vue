@@ -94,14 +94,14 @@ export default {
       menu.classList.toggle("hide");
     },
     startConverting(input) {
-      if (this.endCurValue !== 0 && input.value > 0) {
+      if (this.endCurValue !== 0 && input.value >= 0) {
         this.startInputValue = Number(input.value);
         this.$refs.endInput.value =
           (this.startInputValue * this.startCurValue) / this.endCurValue;
       }
     },
     endConverting(input) {
-      if (input.value > 0) {
+      if (input.value >= 0) {
         this.endInputValue = Number(input.value);
         this.$refs.startInput.value =
           (this.endInputValue * this.endCurValue) / this.startCurValue;
